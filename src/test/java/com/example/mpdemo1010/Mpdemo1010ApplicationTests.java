@@ -44,7 +44,7 @@ public class Mpdemo1010ApplicationTests {
 	@Test
 	public void delUser(){
 
-		int insert = userMapper.deleteById(1320630031710695426l);
+		int insert = userMapper.deleteById(2320630031710695426l);
 		System.out.println("insert====="+insert);
 	}
 
