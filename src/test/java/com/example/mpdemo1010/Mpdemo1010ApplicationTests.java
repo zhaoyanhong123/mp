@@ -1,5 +1,6 @@
 package com.example.mpdemo1010;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.mpdemo1010.entity.User;
 import com.example.mpdemo1010.mapper.UserMapper;
@@ -74,5 +75,27 @@ public class Mpdemo1010ApplicationTests {
 		System.out.println(page.hasNext());//下一页
 		System.out.println(page.hasPrevious());//上一页
 	}
+	@Test
+	public void testSelectByQuery(){
+		QueryWrapper<User> wrapper=new QueryWrapper<>();
+		//通过QueryWrapper设置条件
+		//ge,gt,le,lt
+		//查询age>=30
+		//第一个参数字段名称，第二个参数设置值
+		//wrapper.ge("age",30);
 
+		//eq,ne
+		// wrapper.eq("name", "lucy");
+		//betweens
+		//wrapper.between("age",20,30);
+		//wrapper.like("name","y");
+		//wrapper.orderByDesc("id");
+
+		//last向sql语句最后拼接
+		//wrapper.last("limit 1");
+		//	指定要查询的列
+		wrapper.select("id","name");
+		List<User>users=userMapper.selectList(wrapper);
+		users.forEach(System.out::println);
+	}
 }
