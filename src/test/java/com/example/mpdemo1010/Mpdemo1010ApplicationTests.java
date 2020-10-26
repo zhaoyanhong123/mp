@@ -28,7 +28,7 @@ public class Mpdemo1010ApplicationTests {
 	public void addUser(){
         User user=new User();
         user.setAge(60);
-        user.setName("yue");
+        user.setName("yue234");
         user.setEmail("lucy1@qq.com");
 		int insert = userMapper.insert(user);
 	}
@@ -37,7 +37,7 @@ public class Mpdemo1010ApplicationTests {
 	public void updateUser(){
 		User user=new User();
 		user.setId(2L);
-		user.setAge(25);
+		user.setAge(26);
 		user.setEmail("lucy2@qq.com1");
 		int insert = userMapper.updateById(user);
 	}
